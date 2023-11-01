@@ -1,0 +1,6 @@
+**/.DS_Store
+.vscode
+test
+FFT-from-WAV/audio-recordings
+FFT-from-sine/harmonics.c
+external-libs/*

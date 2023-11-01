@@ -1,0 +1,22 @@
+
+A │                        │                        │
+  │                                                 │
+  │       │                │                │       │
+  │       │                                 │       │
+  │       │      │         │         │      │       │
+  │       │      │                   │      │       │
+  ┴───────┴──────┴─────────┼─────────┴──────┴───────┴─ HZ
+  100     200    400       512       624    824     924 
+
+You can account for the Nyquist point at (NYQUIST = SAMPLE_RATE / 2). 
+Higher frequencies 'fold over' such that, results greater than half 
+  the sample rate unfiltered render something like this:
+
+    100Hz:  SIN: -0.997059          |FFT|   mag: 512.000000
+    200Hz:  SIN: 0.173028           |FFT|   mag: 256.000000
+    400Hz:  SIN: 0.986237           |FFT|   mag: 128.000000
+    624Hz:  SIN: -0.986237          |FFT|   mag: 128.000000
+    824Hz:  SIN: -0.173028          |FFT|   mag: 256.000000
+    924Hz:  SIN: 0.997059           |FFT|   mag: 512.000000
+
+  What is 1024-624? 400. 
